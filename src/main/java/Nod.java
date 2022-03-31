@@ -1,3 +1,12 @@
+
+/**
+ *The class of the linked list node.
+ *Used only in hashmap, implemented as a linked lis.
+ * @param <K> the type of keys supported by this map
+ * @param <V> the type of mapped values
+ * @author Vitaliy Belinsky
+ */
+
 public class Nod<K,V> {
     K key;
     V value;
@@ -7,24 +16,17 @@ public class Nod<K,V> {
         this.key = key;
         this.value = value;
 
-
     }
 
     public K getKey() {
         return key;
     }
 
-    public void setKey(K key) {
-        this.key = key;
-    }
 
     public V getValue() {
         return value;
     }
 
-    public void setValue(V value) {
-        this.value = value;
-    }
 
     @Override
     public String toString() {

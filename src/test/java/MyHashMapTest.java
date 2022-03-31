@@ -1,5 +1,10 @@
 import org.junit.jupiter.api.*;
 
+/**
+ * Testing MyHashMap methods
+ * these are the methods get, put, remove and print
+ * @author Vitaliy Belinsky
+ */
 
 public class MyHashMapTest {
 
@@ -14,18 +19,26 @@ public class MyHashMapTest {
    static void afterAll(){
        System.out.println("Конец теста");
    }
-
+   /*
+   We pre-create a map for each test
+   */
     @BeforeEach
     public void before() {
         map = new MyHashMap<>();
     }
+
+   /*
+   We test the put method and output the result via print
+   */
     @Test
     public void testPut() {
         map.put("Great", 1);
         map.put("Done", 2);
         map.print();
     }
-
+    /*
+    We test the get method by adding a key/value pair and output the result via System.out.println
+     */
     @Test
     public void testGet(){
         map.put(1, "A");
@@ -34,8 +47,12 @@ public class MyHashMapTest {
         map.put("D", 28);
         System.out.println(map.get(42));
 
-
     }
+
+    /*
+    Testing  the remove method using the get method by adding key/value
+     pairs and output the result via System.out.println
+     */
 
     @Test
     public void testRemoveAndGet(){
@@ -48,6 +65,10 @@ public class MyHashMapTest {
 
 
     }
+
+    /*
+     Testing the remove method by adding key/value pairs, output the result via System.out.println
+     */
 
     @Test
     public void testRemoveAndPut(){
@@ -63,14 +84,16 @@ public class MyHashMapTest {
     }
 
     @Test
-    public void testPrint(){
+    public void testPrint() {
+
         map.put(1, "A");
-        map.put(15,"C");
-        map.put("D",28);
+        map.put(15, "C");
+        map.put("D", 28);
         map.put("Z", 28);
         map.put("p", 28);
-
         map.print();
+    }
+
 
 
     }
@@ -80,4 +103,4 @@ public class MyHashMapTest {
 
 
 
-}
+
