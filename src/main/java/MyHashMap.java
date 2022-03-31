@@ -6,22 +6,26 @@ public class MyHashMap<K, V> {
     private Nod<K, V> tables[] = new Nod[SIZE];
 
 
+
     private int hash(K key) {
         return Math.abs(key.hashCode() % SIZE);
     }
 
-    public Object get(K key) {
+    public V get(K key) {
         int hash = hash(key);
-        var n = tables[hash];
-        if (n != null) {
-            while (n.getKey().equals(key)) {
-                return n.getValue();
-            }
-            n = n.next;
-        }
-        return null;
-    }
+        if(tables[hash] == null) return null;
+        else {
+            Nod<K,V> n = tables[hash];
+            while (n != null) {
 
+                if (n.key.equals(key)) {
+                    return  n.value;
+                }
+                n = n.next;
+            }
+            return null;
+        }
+    }
     public void put(K key, V value) {
         int hash = hash(key);
         Nod<K, V> n = tables[hash];
@@ -43,6 +47,8 @@ public class MyHashMap<K, V> {
             tables[hash] = entryNew;
         }
     }
+
+
 
     public void remove(K key) {
         int hash = hash(key);
