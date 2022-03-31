@@ -1,7 +1,7 @@
 public class Nod<K,V> {
     K key;
     V value;
-    Nod next;
+    Nod<K,V> next;
 
     public Nod(K key, V value) {
         this.key = key;
@@ -31,7 +31,6 @@ public class Nod<K,V> {
         return "Nod{" +
                 "key=" + key +
                 ", value=" + value +
-                ", next=" + next +
                 '}';
     }
 }
